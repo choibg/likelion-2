@@ -1,0 +1,16 @@
+<h1>Comments</h1><br> 
+<% @post.each do |post| %>
+  <%= post.username%>:<%=post.content%> 
+  <a href="/blog/edit_post/<%=post.id%>?writer=<%=post.username%>&cott=<%=post.content%>"class="btn">edit</a>
+  <a href="/blog/delete_post/<%=post.id%>"class="btn">delete</a><br>
+  <br>
+  <%post.comments.each do |comment| %>
+    reply_username : <%=comment.username%><br> reply_content :<%=comment.content%><br> 
+  <%end%><br>
+  <form action="/blog/submit_reply/<%=post.id%>">
+    name : <input type="text"name ="username">
+    content : <input type="text"name="content" >
+    <input type="submit" value="write reply">
+  </form>
+<%end%>
+<h3>Click<a href="/blog/write">here</a>to leave your own comment.</h3>

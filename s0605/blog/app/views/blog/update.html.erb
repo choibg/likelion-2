@@ -1,0 +1,6 @@
+<form action="/blog/update_process" method="POST">
+  <input type="hidden" name="id" value="<%=@post.id%>"> 
+  <p>글쓴이 : <input type="text" name="username_from_view"value="<%=@post.username%>"></p>
+  <p>글: <input type="text" name="content_from_view"value="<%=@post.content%>"></p>
+  <p><input type="submit" value="수정"></p>
+</form>

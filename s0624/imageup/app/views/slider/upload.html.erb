@@ -1,0 +1,5 @@
+<%=form_tag({action => :upload_process}, :multipart => true) do %> 
+  <%= file_field_tag 'img' %> 
+  <%= submit_tag 'send' %> 
+<%end %>
+
